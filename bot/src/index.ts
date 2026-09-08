@@ -1,9 +1,9 @@
 import "dotenv/config";
 import { randomUUID } from "node:crypto";
 import { Bot, session, type Context, type SessionFlavor } from "grammy";
-import { BRAND_PHOTO_URL, DICTIONARIES, LANGUAGE_PROMPT, formatOrderConfirmation, formatOrderLine, type Lang } from "./i18n";
-import { backToMenuKeyboard, languagePickerKeyboard, mainMenuKeyboard } from "./keyboards";
-import type { OrderPayload, SessionData, StoredOrder } from "./types";
+import { BRAND_PHOTO_URL, DICTIONARIES, LANGUAGE_PROMPT, formatOrderConfirmation, formatOrderLine, type Lang } from "./i18n.js";
+import { backToMenuKeyboard, languagePickerKeyboard, mainMenuKeyboard } from "./keyboards.js";
+import type { OrderPayload, SessionData, StoredOrder } from "./types.js";
 
 type MyContext = Context & SessionFlavor<SessionData>;
 

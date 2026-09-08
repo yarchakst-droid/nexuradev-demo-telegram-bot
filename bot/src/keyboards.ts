@@ -1,5 +1,5 @@
 import { InlineKeyboard } from "grammy";
-import { DICTIONARIES, LANGUAGE_LABELS, type Lang } from "./i18n";
+import { DICTIONARIES, LANGUAGE_LABELS, type Lang } from "./i18n.js";
 
 const WEBAPP_URL = process.env.WEBAPP_URL ?? "https://example.com";
 

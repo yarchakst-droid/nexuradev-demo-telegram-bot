@@ -1,4 +1,4 @@
-import type { Lang } from "./i18n";
+import type { Lang } from "./i18n.js";
 
 export interface OrderPayload {
   bouquetId: string;
