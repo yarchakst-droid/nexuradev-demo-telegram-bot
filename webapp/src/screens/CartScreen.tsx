@@ -11,6 +11,17 @@ interface Props {
   onBack: () => void;
 }
 
+// Calendar hands back a local-midnight Date for the picked day. Date.toISOString()
+// would convert that to UTC first, silently rolling it back a day for anyone east
+// of UTC (most of this shop's audience) — so build the YYYY-MM-DD string from the
+// local date parts instead.
+function toDateOnly(d: Date): string {
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 export default function CartScreen({ bouquet, onConfirm, onBack }: Props) {
   const { lang, t } = useLang();
   const [date, setDate] = useState<Date | null>(null);
@@ -22,7 +33,7 @@ export default function CartScreen({ bouquet, onConfirm, onBack }: Props) {
       bouquetId: bouquet.id,
       bouquetName: bouquet.name[lang],
       price: bouquet.price,
-      deliveryDate: date.toISOString().slice(0, 10),
+      deliveryDate: toDateOnly(date),
       note: note.trim() || undefined,
     });
   }

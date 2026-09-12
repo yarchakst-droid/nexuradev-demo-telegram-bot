@@ -19,7 +19,9 @@ export default function ConfirmationScreen({ order, onDone, onBackToCatalog }: P
     return () => clearTimeout(timer);
   }, []);
 
-  const formattedDate = new Intl.DateTimeFormat(locale, { day: "numeric", month: "long" }).format(
+  // order.deliveryDate is a plain YYYY-MM-DD calendar date; format in UTC so the
+  // day isn't reinterpreted against the viewer's local timezone offset.
+  const formattedDate = new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", timeZone: "UTC" }).format(
     new Date(order.deliveryDate)
   );
 
