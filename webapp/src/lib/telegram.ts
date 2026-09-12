@@ -21,10 +21,6 @@ interface TelegramWebApp {
     offClick: (cb: () => void) => void;
   };
   themeParams: Record<string, string>;
-  HapticFeedback?: {
-    impactOccurred: (style: "light" | "medium" | "heavy" | "rigid" | "soft") => void;
-    notificationOccurred: (type: "error" | "success" | "warning") => void;
-  };
   initDataUnsafe?: { user?: { first_name?: string } };
 }
 
@@ -44,12 +40,4 @@ export function initTelegram(): TelegramWebApp | null {
   tg.ready();
   tg.expand();
   return tg;
-}
-
-export function hapticImpact(style: "light" | "medium" | "heavy" = "light"): void {
-  getTelegram()?.HapticFeedback?.impactOccurred(style);
-}
-
-export function hapticSuccess(): void {
-  getTelegram()?.HapticFeedback?.notificationOccurred("success");
 }
