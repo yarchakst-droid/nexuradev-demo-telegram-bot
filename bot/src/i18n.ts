@@ -189,7 +189,12 @@ This is a demo project for the NexuraDev portfolio - contacts are illustrative.`
 };
 
 function formatDate(lang: Lang, iso: string): string {
-  return new Intl.DateTimeFormat(LOCALE_TAGS[lang], { day: "numeric", month: "long" }).format(new Date(iso));
+  // iso is a plain YYYY-MM-DD calendar date, not a real instant. new Date(iso)
+  // parses it as UTC midnight, so format in UTC too — otherwise a server running
+  // west of UTC would render the day before whatever the customer picked.
+  return new Intl.DateTimeFormat(LOCALE_TAGS[lang], { day: "numeric", month: "long", timeZone: "UTC" }).format(
+    new Date(iso)
+  );
 }
 
 export function formatOrderLine(order: OrderLike, lang: Lang, isActive: boolean): string {

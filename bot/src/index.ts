@@ -21,8 +21,11 @@ bot.use(
 );
 
 function isActiveOrder(order: StoredOrder): boolean {
+  // order.deliveryDate ("YYYY-MM-DD") parses as UTC midnight, so compare against
+  // a UTC-midnight "today" rather than local midnight — otherwise a server east
+  // or west of UTC would flip orders active/past a day too early or late.
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  today.setUTCHours(0, 0, 0, 0);
   return new Date(order.deliveryDate) >= today;
 }
 
