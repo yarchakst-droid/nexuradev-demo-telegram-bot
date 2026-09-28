@@ -10,7 +10,7 @@ export default function ScreenHeader({ label, onBack }: Props) {
         <button
           onClick={onBack}
           aria-label="Назад"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/70 text-charcoal shadow-soft transition-transform active:scale-90"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/70 text-charcoal shadow-soft transition-transform active:scale-90"
         >
           ←
         </button>

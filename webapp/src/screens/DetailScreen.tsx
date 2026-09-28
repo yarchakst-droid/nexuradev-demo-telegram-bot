@@ -45,7 +45,7 @@ export default function DetailScreen({ bouquet, onChoose, onBack }: Props) {
           </ul>
         </div>
       </div>
-      <div className="fixed inset-x-0 bottom-0 mx-auto flex max-w-md items-center justify-between gap-3 bg-cream/95 px-5 py-4 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 mx-auto flex max-w-md items-center justify-between gap-3 bg-cream/95 px-5 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur">
         <span className="font-display text-xl text-terracotta">{bouquet.price} ₴</span>
         <button
           onClick={onChoose}

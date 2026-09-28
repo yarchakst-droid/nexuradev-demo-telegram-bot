@@ -58,7 +58,7 @@ export default function Calendar({ value, onChange, minDate }: Props) {
         <button
           onClick={() => go(-1)}
           aria-label={t.calendar.prevMonth}
-          className="h-8 w-8 rounded-full text-ink/60 transition hover:bg-blush/50"
+          className="h-10 w-10 rounded-full text-ink/60 transition hover:bg-blush/50"
         >
           ‹
         </button>
@@ -68,7 +68,7 @@ export default function Calendar({ value, onChange, minDate }: Props) {
         <button
           onClick={() => go(1)}
           aria-label={t.calendar.nextMonth}
-          className="h-8 w-8 rounded-full text-ink/60 transition hover:bg-blush/50"
+          className="h-10 w-10 rounded-full text-ink/60 transition hover:bg-blush/50"
         >
           ›
         </button>
@@ -97,7 +97,7 @@ export default function Calendar({ value, onChange, minDate }: Props) {
                 key={date.toISOString()}
                 disabled={disabled}
                 onClick={() => onChange(date)}
-                className="relative flex h-9 items-center justify-center text-sm disabled:cursor-not-allowed"
+                className="relative flex h-10 items-center justify-center text-sm disabled:cursor-not-allowed"
               >
                 {isSelected && (
                   <motion.span

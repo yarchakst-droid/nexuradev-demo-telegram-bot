@@ -20,7 +20,7 @@ export default function FilterPills({ active, onChange }: Props) {
           <button
             key={key}
             onClick={() => onChange(key)}
-            className={`relative shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+            className={`relative flex min-h-[40px] shrink-0 items-center rounded-full px-4 text-sm font-medium transition-colors ${
               isActive ? "text-cream" : "text-ink/70 hover:text-ink"
             }`}
           >

@@ -71,7 +71,7 @@ export default function CartScreen({ bouquet, onConfirm, onBack }: Props) {
         />
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 mx-auto max-w-md bg-cream/95 px-5 py-4 backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 mx-auto max-w-md bg-cream/95 px-5 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur">
         <button
           onClick={handleConfirm}
           disabled={!date}

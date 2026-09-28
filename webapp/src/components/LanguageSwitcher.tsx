@@ -17,7 +17,7 @@ export default function LanguageSwitcher() {
             type="button"
             onClick={() => setLang(option)}
             aria-label={`VelvetBloom: ${LABELS[option]}`}
-            className={`rounded-full px-2 py-1 text-[10px] font-semibold tracking-wide transition-colors ${
+            className={`flex min-h-[40px] items-center justify-center rounded-full px-2.5 text-[11px] font-semibold tracking-wide transition-colors ${
               active ? "bg-terracotta text-cream" : "text-ink/50"
             }`}
           >
