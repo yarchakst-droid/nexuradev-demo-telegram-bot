@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useLang } from "../i18n/LangContext";
 import type { Occasion } from "../types";
 
@@ -24,13 +23,7 @@ export default function FilterPills({ active, onChange }: Props) {
               isActive ? "text-cream" : "text-ink/70 hover:text-ink"
             }`}
           >
-            {isActive && (
-              <motion.span
-                layoutId="pill-bg"
-                className="absolute inset-0 rounded-full bg-terracotta"
-                transition={{ type: "spring", stiffness: 350, damping: 30 }}
-              />
-            )}
+            {isActive && <span className="absolute inset-0 rounded-full bg-terracotta" />}
             <span className="relative">{t.filters[key]}</span>
           </button>
         );
